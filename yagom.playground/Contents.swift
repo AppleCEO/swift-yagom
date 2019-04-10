@@ -26,6 +26,8 @@ print("\n########################\n")
 
 dump(yagom)
 
+
+
 //2강 상수와 변수
 
 // 상수, 변수의 선언
@@ -67,3 +69,36 @@ nickName = "yagom"
 
 // 변수는 차후에 다시 다른 값을 할당해도 문제가 없지요
 nickName = "야곰"
+
+
+//3강 기본 데이터 타입
+
+// Bool
+var someBool: Bool = true
+someBool = false
+
+// Int
+var someInt: Int = -100
+
+// UInt
+var someUInt: UInt = 100
+
+// Float
+var someFloat: Float = 3.14
+someFloat = 3
+
+// Double
+var someDouble: Double = 3.14
+someDouble = 3
+
+// Character
+var someCharacter: Character = "🇰🇷"
+someCharacter = "😄"
+//someCharacter = "가"
+//someCharacter = "A"
+print(someCharacter)
+
+// String
+var someString: String = "하하하 😄 "
+someString = someString + "웃으면 복이와요"
+print(someString)
