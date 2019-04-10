@@ -579,16 +579,16 @@ func printName(_ name: String) {
     print(name)
 }
 
-var myName: String? = "yagom"
+var myName11: String? = "yagom"
 
-printName(myName!) // yagom
+printName(myName11!) // yagom
 
-myName = nil
+myName11 = nil
 
 //print(myName!)
 // 강제추출시 값이 없으므로 런타임 오류 발생
 
-var yourName: String! = nil
+var yourName11: String! = nil
 
 //printName(yourName)
 // nil 값이 전달되기 때문에 런타임 오류발생
