@@ -532,3 +532,26 @@ while integers10.count > 1 {
 repeat {
     integers10.removeLast()
 } while integers10.count > 0
+
+
+
+// 11강 옵셔널
+
+var optionalValue: Int! = 10
+
+switch optionalValue {
+case .none:
+    print("This Optional variable is nil")
+case .some(let value):
+    print("Value is \(value)")
+}
+
+var optionalValue2: Int? = 10
+
+switch optionalValue2 {
+case .none:
+    print("This Optional variable is nil")
+case .some(let value):
+    print("Value is \(value)")
+}
+
