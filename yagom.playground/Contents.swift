@@ -555,3 +555,41 @@ case .some(let value):
     print("Value is \(value)")
 }
 
+
+
+// 12강 옵셔널 추출
+
+// if-let
+var myName: String? = "yagom"
+var yourName: String? = nil
+
+if let name = myName, let friend = yourName {
+    print("\(name) and \(friend)")
+}
+// yourName이 nil이기 때문에 실행되지 않습니다
+
+yourName = "hana"
+
+if let name = myName, let friend = yourName {
+    print("\(name) and \(friend)")
+}
+
+// Force unwrapping
+func printName(_ name: String) {
+    print(name)
+}
+
+var myName: String? = "yagom"
+
+printName(myName!) // yagom
+
+myName = nil
+
+//print(myName!)
+// 강제추출시 값이 없으므로 런타임 오류 발생
+
+var yourName: String! = nil
+
+//printName(yourName)
+// nil 값이 전달되기 때문에 런타임 오류발생
+
