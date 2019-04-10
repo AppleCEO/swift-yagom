@@ -403,25 +403,25 @@ print(sayHelloToFriends(me: "yagom"))
 // 반환타입을 생략할 수 없습니다
 // (매개변수1타입, 매개변수2타입 ...) -> 반환타입
 
-var someFunction: (String, String) -> Void = greeting(to:from:)
-someFunction("eric", "yagom") // Hello eric! I'm yagom
-
-someFunction = greeting(friend:me:)
-someFunction("eric", "yagom")
+//var someFunction: (String, String) -> Void = greeting(to:from:)
+//someFunction("eric", "yagom") // Hello eric! I'm yagom
+//
+//someFunction = greeting(friend:me:)
+//someFunction("eric", "yagom")
 
 
 // 타입이 다른 함수는 할당할 수 없습니다
 //someFunction = sayHelloToFriends(me: friends:)
 
-func runAnother(function: (String, String) -> Void) {
-    function("jenny", "mike")
-}
+//func runAnother(function: (String, String) -> Void) {
+//    function("jenny", "mike")
+//}
 
 // Hello jenny! I'm mike
-runAnother(function: greeting(friend:me:))
+//runAnother(function: greeting(friend:me:))
 
 // Hello jenny! I'm mike
-runAnother(function: someFunction)
+//runAnother(function: someFunction)
 
 
 
@@ -489,3 +489,46 @@ default:
 } // yagom!!
 
 
+
+// 10강 반복문
+
+/* 반복문 */
+
+var integers10 = [1, 2, 3]
+let people = ["yagom": 10, "eric": 15, "mike": 12]
+
+//MARK: - for-in
+
+//for item in items {
+//    code
+//}
+
+for integer in integers10 {
+    print(integer)
+}
+
+// Dictionary의 item은 key와 value로 구성된 튜플 타입입니다
+for (name, age) in people {
+    print("\(name): \(age)")
+}
+
+//MARK: - while
+
+//while condition {
+//    code
+//}
+
+while integers10.count > 1 {
+    integers10.removeLast()
+}
+
+
+//MARK: - repeat-while
+
+//repeat {
+//    code
+//} while condition
+
+repeat {
+    integers10.removeLast()
+} while integers10.count > 0
