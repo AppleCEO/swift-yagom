@@ -579,17 +579,93 @@ func printName(_ name: String) {
     print(name)
 }
 
-var myName11: String? = "yagom"
+var myName12: String? = "yagom"
 
-printName(myName11!) // yagom
+printName(myName12!) // yagom
 
-myName11 = nil
+myName12 = nil
 
 //print(myName!)
 // 강제추출시 값이 없으므로 런타임 오류 발생
 
-var yourName11: String! = nil
+var yourName12: String! = nil
 
 //printName(yourName)
 // nil 값이 전달되기 때문에 런타임 오류발생
+
+
+
+// 13강 구조체
+
+//MARK: - 정의
+
+//struct 이름 {
+//    /* 구현부 */
+//}
+
+//MARK: 프로퍼티 및 메서드
+
+struct Sample {
+    var mutableProperty: Int = 100 // 가변 프로퍼티
+    let  immutableProperty: Int = 100 // 불변 프로퍼티
+    
+    static var typeProperty: Int = 100 // 타입 프로퍼티
+    
+    // 인스턴스 메서드
+    func instanceMethod() {
+        print("instance method")
+    }
+    
+    // 타입 메서드
+    static func typeMethod() {
+        print("type method")
+    }
+}
+
+//MARK: 구조체 사용
+
+// 가변 인스턴스
+var mutable: Sample = Sample()
+
+mutable.mutableProperty = 200
+//mutable.immutableProperty = 200
+
+// 불변 인스턴스
+let immutable: Sample = Sample()
+
+//immutable.mutableProperty = 200
+//immutable.immutableProperty == 200
+
+// 타입 프로퍼티 및 메서드
+Sample.typeProperty = 300
+Sample.typeMethod() // type method
+
+
+//MARK: - 학생 구조체
+
+struct Student {
+    var name: String = "unknown"
+    var `class`: String = "Swift"
+    
+    static func selfIntroduce() {
+        print("학생타입입니다")
+    }
+    
+    func selfIntroduce() {
+        print("저는 \(self.class)반 \(name)입니다")
+    }
+}
+
+Student.selfIntroduce() // 학생타입입니다
+
+var yagom13: Student = Student()
+yagom13.name = "yagom"
+yagom13.class = "스위프트"
+
+let jina: Student = Student()
+
+// 불변 인스턴스이므로 프로퍼티 값 변경 불가
+// 컴파일 오류 발생
+//jina.name = "jina"
+jina.selfIntroduce() // 저는 Swift반 unknown입니다
 
